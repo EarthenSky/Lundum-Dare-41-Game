@@ -8,7 +8,7 @@ local waveStats = 0
 WaveManager.currentTick = 0
 
 function initRoundOutput()
-    waveOutputTable[1] = {e=2, t=18}
+    waveOutputTable[1] = {e=3, t=20}
     waveOutputTable[2] = {e=2, t=10}
     waveOutputTable[3] = {e=3, t=8}
     waveOutputTable[4] = {e=6, t=7}
