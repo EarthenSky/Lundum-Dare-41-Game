@@ -32,7 +32,9 @@ end
 
 -- Sets if the set pixel-char is background highlighted.
 function Screen.setHighlighted(pos, bool)
-    highlightMatrix[pos.y][pos.x] = bool
+    if pos.x > 0 and pos.y > 0 and pos.x < CHAR_SCREEN_SIZE.x and pos.y < CHAR_SCREEN_SIZE.y then
+        highlightMatrix[pos.y][pos.x] = bool
+    end
 end
 
 -- Sets the char's highlight colour.
@@ -51,11 +53,17 @@ function Screen.draw()
                 if highlightColourMatrix[y][x] == 0 then
                     love.graphics.setColor(250, 250, 250, 175)  -- White
                 elseif highlightColourMatrix[y][x] == 1 then
-                    love.graphics.setColor(250, 0, 0, 175)  -- Red
+                    love.graphics.setColor(250, 70, 50, 225)  -- Red
                 elseif highlightColourMatrix[y][x] == 2 then
                     love.graphics.setColor(0, 0, 250, 175)  -- Blue
                 elseif highlightColourMatrix[y][x] == 3 then
-                    love.graphics.setColor(26, 237, 237, 175)  -- Teal
+                    love.graphics.setColor(28, 237, 237, 195)  -- Teal
+                elseif highlightColourMatrix[y][x] == 4 then
+                    love.graphics.setColor(255, 153, 0, 219)  -- Orange
+                elseif highlightColourMatrix[y][x] == 5 then
+                    love.graphics.setColor(220, 95, 30, 205)  -- Dark Orange
+                elseif highlightColourMatrix[y][x] == 6 then
+                    love.graphics.setColor(40, 110, 187, 210)  -- Dark Teal / Blue
                 end
 
                 love.graphics.rectangle("fill", drawPos.x-1, drawPos.y+10, (FONT_SIZE+6)/1.85, (FONT_SIZE+6)/1.35)
