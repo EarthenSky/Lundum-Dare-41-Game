@@ -8,7 +8,7 @@ local hasLetGo = true
 
 function UnitPlacer.update()
     -- If the mouse is inside the game window and the shortButton is pressed.
-    if ui.shortButton.isActive() and love.mouse.getX() > (FONT_SIZE+6)/1.85*6 and love.mouse.getX() < (FONT_SIZE+6)/1.85*26 and love.mouse.getY() > (FONT_SIZE+6)/1.35 and love.mouse.getY() < (FONT_SIZE+6)/1.35*12 then
+    if ui.shortButton.isActive() and love.mouse.getX() > (FONT_SIZE+6)/1.8*6 and love.mouse.getX() < (FONT_SIZE+6)/1.8*26 and love.mouse.getY() > (FONT_SIZE+6)/1.35 and love.mouse.getY() < (FONT_SIZE+6)/1.35*12 then
         -- Move the highlighted square around with the mouse.
         if isStoppedPos == false then
             if love.mouse.isDown(1) == false then
@@ -17,7 +17,7 @@ function UnitPlacer.update()
 
             lastPos = currentPos
             currentPos = {
-                x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.85)) ),
+                x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.8)) ),
                 y = 1 + tostring( math.floor((love.mouse.getY()) / ((FONT_SIZE+6)/1.35)) )
             }
 
@@ -72,7 +72,7 @@ function UnitPlacer.update()
                         screen.setHighlighted({x=currentPos.x, y=currentPos.y-1}, true)
                     end
                 else
-                    ui.setMessage("BAD   ", "SPACE ")
+                    ui.setMessage("BAD   ", "SPACE ", 0.5)
                 end
             end
         else
@@ -90,7 +90,7 @@ function UnitPlacer.update()
                 screen.setHighlighted({x=currentPos.x, y=currentPos.y-1}, false)
 
                 currentPos = {
-                    x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.85)) ),
+                    x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.8)) ),
                     y = 1 + tostring( math.floor((love.mouse.getY()) / ((FONT_SIZE+6)/1.35)) )
                 }
 
@@ -136,7 +136,7 @@ function UnitPlacer.update()
                 hasLetGo = false
             end
         end
-    elseif ui.longButton.isActive() and love.mouse.getX() > (FONT_SIZE+6)/1.85*6 and love.mouse.getX() < (FONT_SIZE+6)/1.85*26 and love.mouse.getY() > (FONT_SIZE+6)/1.35 and love.mouse.getY() < (FONT_SIZE+6)/1.35*12 then
+    elseif ui.longButton.isActive() and love.mouse.getX() > (FONT_SIZE+6)/1.8*6 and love.mouse.getX() < (FONT_SIZE+6)/1.8*26 and love.mouse.getY() > (FONT_SIZE+6)/1.35 and love.mouse.getY() < (FONT_SIZE+6)/1.35*12 then
         -- Move the highlighted square around with the mouse.
         if isStoppedPos == false then
             if love.mouse.isDown(1) == false then
@@ -145,7 +145,7 @@ function UnitPlacer.update()
 
             lastPos = currentPos
             currentPos = {
-                x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.85)) ),
+                x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.8)) ),
                 y = 1 + tostring( math.floor((love.mouse.getY()) / ((FONT_SIZE+6)/1.35)) )
             }
 
@@ -221,7 +221,7 @@ function UnitPlacer.update()
                         screen.setHighlighted({x=currentPos.x, y=currentPos.y-2}, true)
                     end
                 else
-                    ui.setMessage("BAD   ", "SPACE ")
+                    ui.setMessage("BAD   ", "SPACE ", 0.5)
                 end
             end
         else
@@ -241,12 +241,14 @@ function UnitPlacer.update()
                     screen.setHighlighted({x=currentPos.x-2, y=currentPos.y}, false)
                 end
 
-                screen.setHighlighted({x=currentPos.x+2, y=currentPos.y}, false)
+                if currentPos.x ~= 26 then
+                    screen.setHighlighted({x=currentPos.x+2, y=currentPos.y}, false)
+                end
                 screen.setHighlighted({x=currentPos.x, y=currentPos.y+2}, false)
                 screen.setHighlighted({x=currentPos.x, y=currentPos.y-2}, false)
 
                 currentPos = {
-                    x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.85)) ),
+                    x = 1 + tostring( math.floor((love.mouse.getX()) / ((FONT_SIZE+6)/1.8)) ),
                     y = 1 + tostring( math.floor((love.mouse.getY()) / ((FONT_SIZE+6)/1.35)) )
                 }
 
@@ -304,7 +306,10 @@ function UnitPlacer.clear()
         screen.setHighlighted({x=currentPos.x-1, y=currentPos.y}, false)
         screen.setHighlighted({x=currentPos.x, y=currentPos.y-1}, false)
 
-        screen.setHighlighted({x=currentPos.x+2, y=currentPos.y}, false)
+        if currentPos.x ~= 26 then
+            screen.setHighlighted({x=currentPos.x+2, y=currentPos.y}, false)
+        end
+
         screen.setHighlighted({x=currentPos.x, y=currentPos.y+2}, false)
         screen.setHighlighted({x=currentPos.x-2, y=currentPos.y}, false)
         screen.setHighlighted({x=currentPos.x, y=currentPos.y-2}, false)

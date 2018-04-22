@@ -5,11 +5,12 @@ UI.path = {}
 UI.shortButton = require "objects/shortButton"
 UI.longButton = require "objects/longButton"
 UI.nextWaveButton = require "objects/nextWaveButton"
+UI.gameSpeedButtons = require "objects/gameSpeedButtons"
 
 -- Init UI variables.
-local money = 250
+local money = 300
 local wave = 0
-local lives = 10
+local lives = 5
 
 -- Both messages max *6* chars
 local errMessageTop = ""
@@ -160,12 +161,12 @@ function UI.getMessage()
 end
 
 UI.messageDisapearTimer = -10000
-function UI.setMessage(top, bottom)
+function UI.setMessage(top, bottom, wait)
     errMessageTop = top
     errMessageBottom = bottom
     blitMessage()
 
-    UI.messageDisapearTimer = 0.5
+    UI.messageDisapearTimer = wait
 end
 
 ------------------------------
@@ -266,6 +267,8 @@ function UI.init()
     UI.shortButton.init()
     UI.longButton.init()
     UI.nextWaveButton.init()
+
+    UI.gameSpeedButtons.init()
 end
 
 function UI.update(dt)
@@ -273,6 +276,8 @@ function UI.update(dt)
     UI.shortButton.update()
     UI.longButton.update()
     UI.nextWaveButton.update()
+
+    UI.gameSpeedButtons.update()
 
     if UI.messageDisapearTimer > -9998 then
         UI.messageDisapearTimer = UI.messageDisapearTimer - dt

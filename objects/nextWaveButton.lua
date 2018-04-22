@@ -90,7 +90,7 @@ end
 -- Fires once, each time it is clicked.
 local isClicked = false
 function NextWaveButton.update()
-    if love.mouse.isDown(1) == true and isClicked == false and love.mouse.getX() > 0 and love.mouse.getX() < ((FONT_SIZE+6)/1.85)*5 and love.mouse.getY() > (FONT_SIZE+6)/1.35*9 and love.mouse.getY() < (FONT_SIZE+6)/1.35*9 + ((FONT_SIZE+6)/1.35)*3 then
+    if love.mouse.isDown(1) == true and isClicked == false and love.mouse.getX() > 0 and love.mouse.getX() < ((FONT_SIZE+6)/1.8)*5 and love.mouse.getY() > (FONT_SIZE+6)/1.35*9 and love.mouse.getY() < (FONT_SIZE+6)/1.35*9 + ((FONT_SIZE+6)/1.35)*3 then
         isClicked = true
 
         -- Turn on and blit.

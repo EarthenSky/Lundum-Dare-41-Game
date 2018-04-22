@@ -24,6 +24,14 @@ function blit()
         screen.setChar({x=x, y=9}, "—")
     end
 
+    for x=28,29,1 do
+        screen.setChar({x=x, y=5}, "—")
+    end
+
+    for x=28,29,1 do
+        screen.setChar({x=x, y=9}, "—")
+    end
+
     -- Print all the verticle lines.
     for y=2,12,1 do
         screen.setChar({x=6, y=y}, "|")
@@ -43,6 +51,10 @@ function blit()
 
     for y=14,15,1 do
         screen.setChar({x=21, y=y}, "|")
+    end
+
+    for y=2,12,1 do
+        screen.setChar({x=30, y=y}, "|")
     end
 end
 

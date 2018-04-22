@@ -76,7 +76,7 @@ end
 -- Fires once, each time it is clicked.
 local isClicked = false
 function LongButton.update()
-    if love.mouse.isDown(1) == true and isClicked == false and love.mouse.getX() > 0 and love.mouse.getX() < ((FONT_SIZE+6)/1.85)*5 and love.mouse.getY() > (FONT_SIZE+6)/1.35*5 and love.mouse.getY() < (FONT_SIZE+6)/1.35*5 + ((FONT_SIZE+6)/1.35)*3 then
+    if love.mouse.isDown(1) == true and isClicked == false and love.mouse.getX() > 0 and love.mouse.getX() < ((FONT_SIZE+6)/1.8)*5 and love.mouse.getY() > (FONT_SIZE+6)/1.35*5 and love.mouse.getY() < (FONT_SIZE+6)/1.35*5 + ((FONT_SIZE+6)/1.35)*3 then
         isClicked = true
 
         -- Toggle the activeness and blit.
@@ -86,7 +86,7 @@ function LongButton.update()
                 activeBlit()
                 ui.shortButton.setDeactive()
             elseif isActive == false and ui.getMoney() < 140 then
-                ui.setMessage("NEED  ", "MONEY ")
+                ui.setMessage("NEED  ", "MONEY ", 0.5)
             else
                 isActive = false
                 deactiveBlit()

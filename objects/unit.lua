@@ -133,19 +133,19 @@ function Unit:tick()
                 enemyPos = ui.path[v.m_pos]
 
                 if (playerPos.x + 1 == enemyPos.x and playerPos.y == enemyPos.y) then
-                    self.currentTimeOut = 18
+                    self.currentTimeOut = 22
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x - 1 == enemyPos.x and playerPos.y == enemyPos.y) then
-                    self.currentTimeOut = 18
+                    self.currentTimeOut = 22
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x == enemyPos.x and playerPos.y + 1 == enemyPos.y) then
-                    self.currentTimeOut = 18
+                    self.currentTimeOut = 22
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x == enemyPos.x and playerPos.y - 1 == enemyPos.y) then
-                    self.currentTimeOut = 18
+                    self.currentTimeOut = 22
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 end
@@ -160,35 +160,35 @@ function Unit:tick()
                 enemyPos = ui.path[v.m_pos]
 
                 if (playerPos.x + 1 == enemyPos.x and playerPos.y == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x - 1 == enemyPos.x and playerPos.y == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x == enemyPos.x and playerPos.y + 1 == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x == enemyPos.x and playerPos.y - 1 == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x + 2 == enemyPos.x and playerPos.y == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x - 2 == enemyPos.x and playerPos.y == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x == enemyPos.x and playerPos.y + 2 == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 elseif (playerPos.x == enemyPos.x and playerPos.y - 2 == enemyPos.y) then
-                    self.currentTimeOut = 20
+                    self.currentTimeOut = 26
                     self:highlight(playerPos)
                     v.m_toDestroy = true
                 end

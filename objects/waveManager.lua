@@ -10,16 +10,16 @@ WaveManager.currentTick = 0
 function initRoundOutput()
     waveOutputTable[1] = {e=2, t=11}
     waveOutputTable[2] = {e=3, t=8}
-    waveOutputTable[3] = {e=4, t=7}
-    waveOutputTable[4] = {e=7, t=6}
-    waveOutputTable[5] = {e=8, t=6}
-    waveOutputTable[6] = {e=10, t=5}
-    waveOutputTable[7] = {e=8, t=2}
-    waveOutputTable[8] = {e=14, t=5}
-    waveOutputTable[9] = {e=16, t=4}
-    waveOutputTable[10] = {e=18, t=2}
-    waveOutputTable[11] = {e=20, t=1}
-    waveOutputTable[12] = {e=24, t=3}
+    waveOutputTable[3] = {e=6, t=7}
+    waveOutputTable[4] = {e=6, t=6}
+    waveOutputTable[5] = {e=7, t=5}
+    waveOutputTable[6] = {e=8, t=4}
+    waveOutputTable[7] = {e=7, t=2}
+    waveOutputTable[8] = {e=10, t=4}
+    waveOutputTable[9] = {e=12, t=3}
+    waveOutputTable[10] = {e=14, t=2}
+    waveOutputTable[11] = {e=12, t=1.5}
+    waveOutputTable[12] = {e=15, t=1}
     -- +1, +random(1, 3), =random(2, 4)
 end
 
@@ -36,7 +36,7 @@ function WaveManager.nextWaveStart()
         winGame()  -- You "win" sortof...
     else
         -- +1, +random(1, 3), =random(2, 4)
-        extraEnemies = extraEnemies + love.math.random(2, 10)
+        extraEnemies = extraEnemies + love.math.random(2, 6)
         waveStats = {e=waveOutputTable[12].e + extraEnemies, t=love.math.random(1, 2)}
     end
 end

@@ -1,9 +1,9 @@
 --Double commented code (----) is not a note, but removed code.
 
 -- Important and Constant variables.
-CHAR_SCREEN_SIZE = {x=27, y=16}
-SCREEN_SIZE = {x=748, y=598}
-TPS = 16
+CHAR_SCREEN_SIZE = {x=30, y=16}
+SCREEN_SIZE = {x=852, y=608}
+TPS = 8
 
 g_currentScene = 0
 g_debugString = "start"
@@ -21,7 +21,7 @@ function love.load()
 
     -- Set up the window.
     love.window.setMode(SCREEN_SIZE.x, SCREEN_SIZE.y, {resizable=false, vsync=true})
-    love.window.setTitle("Text Tower Defence")
+    love.window.setTitle("Text Tower Defense!")
     love.graphics.setBackgroundColor(5, 5, 5, 255)
 
     -- Other Modules are loaded here.
@@ -58,6 +58,7 @@ end
 function love.update(dt)
     if g_resetGame == false then
         ui.update(dt)
+
         unitPlacer.update()
 
         -- If the next wave is moving...
@@ -82,7 +83,7 @@ function love.update(dt)
 end
 
 function winGame()
-    ui.setMessage("YOU   ", "WIN!!!")
+    ui.setMessage("YOU   ", "WIN!!!", 4)
 end
 
 function loseGame()
@@ -115,10 +116,10 @@ function resetGame()
     ui.nextWaveButton.setDeactive()
 
     -- Reset ui
-    ui.setLives(10)
-    ui.setMoney(250)
+    ui.setLives(5)
+    ui.setMoney(300)
     ui.setWave(0)
-    ui.setMessage("GAME  ", "RESET ")
+    ui.setMessage("GAME  ", "RESET ", 0.5)
 
     -- Module variables are reset, in module. (managers)
     waveManager.reset()

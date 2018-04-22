@@ -21,6 +21,8 @@ function Enemy:tick()
     if self.m_pos > 53 then
         ui.setLives(ui.getLives() - 1)
 
+        ui.setMoney(ui.getMoney() / 2)
+
         if ui.getLives() <= 0 then
             loseGame()
         end

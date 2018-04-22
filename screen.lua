@@ -46,7 +46,7 @@ function Screen.draw()
     -- Draw all chars + highlights to the screen.
     for y=1,CHAR_SCREEN_SIZE.y,1 do
         for x=1,CHAR_SCREEN_SIZE.x,1 do
-            drawPos = {x=((x-1)*(FONT_SIZE+6)/1.85) + 3, y=((y-1)*(FONT_SIZE+6)/1.35) - 8}
+            drawPos = {x=((x-1)*(FONT_SIZE+6)/1.8) + 3, y=((y-1)*(FONT_SIZE+6)/1.35) - 10}
 
             -- Draw the highlight.
             if highlightMatrix[y][x] == true then
@@ -64,9 +64,11 @@ function Screen.draw()
                     love.graphics.setColor(220, 95, 30, 205)  -- Dark Orange
                 elseif highlightColourMatrix[y][x] == 6 then
                     love.graphics.setColor(40, 110, 187, 210)  -- Dark Teal / Blue
+                elseif highlightColourMatrix[y][x] == 7 then
+                    love.graphics.setColor(20, 240, 80, 240)  -- Green
                 end
 
-                love.graphics.rectangle("fill", drawPos.x-1, drawPos.y+10, (FONT_SIZE+6)/1.85, (FONT_SIZE+6)/1.35)
+                love.graphics.rectangle("fill", drawPos.x-1, drawPos.y+10, (FONT_SIZE+6)/1.8, (FONT_SIZE+6)/1.35)
             end
 
             -- Draw the char. (white)

@@ -27,7 +27,7 @@ function EnemyManager.garbageTick()
     for k,v in pairs(garbageList) do
         EnemyManager.enemyList[k]:hide()  -- Disapear blit before destroyed.
         EnemyManager.enemyList[k] = nul
-        ui.setMoney(ui.getMoney() + 15)  -- Get money when an enemy dies, no matter what.
+        ui.setMoney(ui.getMoney() + 16)  -- Get money when an enemy dies, no matter what.
     end
 
     -- Clear garbage list.
