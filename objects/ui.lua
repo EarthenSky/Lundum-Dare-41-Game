@@ -8,7 +8,7 @@ UI.nextWaveButton = require "objects/nextWaveButton"
 UI.gameSpeedButtons = require "objects/gameSpeedButtons"
 
 -- Init UI variables.
-local money = 300
+local money = 280
 local wave = 0
 local lives = 5
 

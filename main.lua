@@ -117,7 +117,7 @@ function resetGame()
 
     -- Reset ui
     ui.setLives(5)
-    ui.setMoney(300)
+    ui.setMoney(280)
     ui.setWave(0)
     ui.setMessage("GAME  ", "RESET ", 0.5)
 
